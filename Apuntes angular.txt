@@ -1,0 +1,47 @@
+
+Comandos:
+
+Crear un proyecto-> ng new nombredelproyecto
+
+Primera pregunta->no
+Segunda pregunta->Css
+tercera pregunta->n
+
+
+Arrancar el servidor ->ng serve/ para apagar el servidor ctr+c
+
+y el google se accede a traves de localhost:4200
+
+Componente:son las zonas en las que esta dividida una aplicacion o pagina web
+Para trabajar con un componente primero hay q importalo en app.componets.ts y luego en losimports igual
+
+Pasos para crear un componente:
+	1)Usar el comando ng g c nombrecomponente
+	2)Meter en app.components.ts el import del nuevo componente,tanto en las primeras lineas como en la linea de import
+	3)En el html de app.components.html abrir la etiqueta correspondiente del nuevo componete(el nombre de dicha etiqueta se encuentra
+		en nombrecomponente.component.ts en la linea que pone selector)
+
+Variable:
+	Creo una variable en ciclo.component.ts,ahi le asigno un valor a dicha variable y para mostartla voy al ciclo.component.html
+	y entre dobles llaves {{}}pongo el nombre de mi variable.
+
+
+*ngIf="marketing==true" esto en teoria es un if en java.De momento no hay else
+*ngFor="let emp of trabajadores">
+        <li>{{emp.nombre}} <br>
+            {{emp.cargo}} <br>
+            {{emp.edad}} <br>
+        </li>
+
+
+Data binding:como se comunica la vista(.TS) con el controlador (.html)
+
+	Una sola direccion: 
+		del ts a la vista.(interpolacion y property binding)mostrar propiedad en la vista
+
+		Del .html al .ts (event binding)LLamar con un evento en html a un metodo en el controlador
+
+	Dos direcciones:Enlaza los datos en las dos direcciones,es decir,cuando modificamos algo en la 
+				vista se modifica en la propiedad de la clase de manera instantanea
+	
+Carro: Input para llenar el array de lo que se ha ido comprando y un output en cantidad??

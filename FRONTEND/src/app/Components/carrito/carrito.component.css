@@ -1,0 +1,59 @@
+/* Fondo oscurecido */
+*{
+    color: black;
+}
+.btn{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 10px 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.btn:hover{
+    background-color: #cccccc;
+    font-size: 17px;
+}
+.cart-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    background: rgba(0, 0, 0, 0.8); /* Oscurecido */
+    opacity: 0; 
+    pointer-events: none; /* No clickeable al estar oculto */
+    transition: opacity 0.3s ease;
+    z-index: 9998; 
+  }
+  
+  .cart-overlay.active {
+    opacity: 1; 
+    pointer-events: auto; /* Activa clics para cerrar */
+  }
+  
+  /* Panel lateral del carrito */
+  .cart-panel {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 300px;        /* Ajusta el ancho de tu carrito */
+    height: 100vh;       
+    background: darkorange;     /* Fondo blanco */
+    box-shadow: -3px 0 5px rgba(0,0,0,0.3);
+    border-left: 2px solid rgb(255, 255, 255);
+    padding: 12px;
+    transform: translateX(100%); /* Fuera de la vista a la derecha */
+    transition: transform 0.3s ease;
+    z-index: 9999; 
+  }
+  
+  /* Cuando isCartOpen es true, .active quita el translateX */
+  .cart-panel.active {
+    transform: translateX(0);
+  }

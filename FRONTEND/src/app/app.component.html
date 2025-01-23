@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina principal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!--Header con los 3 botones de apertura de paneles-->
+    <app-header
+      (openCart)="isCartOpen = true"
+      (toggleAdmin)="onToggleAdmin()">
+    </app-header> 
+
+      <!-- Carrito -->
+      <app-carrito [(isOpen)]="isCartOpen"></app-carrito>
+
+      <!-- Admin Panel -->
+      <app-admin
+      [isOpen]="isAdminOpen"
+      (closed)="isAdminOpen = false">
+      </app-admin>
+
+    <div class="content"> <!--Porque si no al crecer en productos no crecen juntos y queda raro-->
+      <div class="app-lateral">
+        <app-lateral></app-lateral>
+      </div>
+      <div class="app-main">
+        <app-main></app-main>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!-- Botón / icono para “Mi cuenta”. 
+     Puede ser un <div>, <a>, <button>... según tu diseño -->
+        
+        <button class="user-icon" (click)="toggleMenu()">
+            <!-- Icono de usuario + texto "Mi Cuenta" -->
+            <span class="icono-usuario">👤</span>
+            <span>Mi Cuenta</span>
+          
+            <!-- Menú desplegable -->
+            <ul class="user-menu-dropdown" [class.open]="isMenuOpen">
+              <!-- Si NO hay usuario logueado, muestra Login y Registro -->
+              <li *ngIf="!currentUser">
+                <a (click)="showLoginForm()">Login</a>
+              </li>
+              <li *ngIf="!currentUser">
+                <a (click)="showRegisterForm()">Registro</a>
+              </li>
+          
+              <!-- Si HAY usuario, muestra "Desconexión" -->
+              <li *ngIf="currentUser">
+                <a (click)="doLogout()">Desconexión</a>
+              </li>
+            </ul>
+          </button>
+          
+          <!-- FORMULARIO LOGIN (opcional: podrías usar un modal) -->
+          <div *ngIf="isShowingLoginForm" class="login-form">
+            <h3>Login</h3>
+            <div>
+              <label>Usuario: </label>
+              <input [(ngModel)]="username" type="text">
+            </div>
+            <div>
+              <label>Password: </label>
+              <input [(ngModel)]="password" type="password">
+            </div>
+            <button (click)="login()">Iniciar sesión</button>
+            <button (click)="isShowingLoginForm=false">Cerrar</button>
+          </div>
+          
+          <!-- FORMULARIO REGISTRO -->
+          <div *ngIf="isShowingRegisterForm" class="register-form">
+            <h3>Registro</h3>
+            <div>
+              <label>Usuario: </label>
+              <input [(ngModel)]="username" type="text">
+            </div>
+            <div>
+              <label>Password: </label>
+              <input [(ngModel)]="password" type="password">
+            </div>
+            <button (click)="register()">Registrarse</button>
+            <button (click)="isShowingRegisterForm=false">Cerrar</button>
+          </div>

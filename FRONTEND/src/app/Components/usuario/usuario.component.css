@@ -1,0 +1,64 @@
+.user-icon {
+    position: relative; /* Para posicionar el dropdown */
+    display: inline-block;
+    padding: 10px;
+    background: #ccc;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  li:hover {
+    background-color: #cccccc;
+    font-size: 17px;
+  }
+  .user-icon:hover {
+    background-color: #cccccc;
+    font-size: 17px;
+  }
+  /* El menú desplegable */
+  .user-menu-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    background: white;
+    margin: 0;
+    padding: 0;
+    display: none;
+    border: 1px solid #ddd;
+  }
+  
+  .user-menu-dropdown li {
+    margin: 0;
+    padding: 5px 10px;
+  }
+  
+  .user-menu-dropdown li a {
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .user-menu-dropdown.open {
+    display: block;
+  }
+  
+  /* Formularios */
+  .login-form, .register-form {
+    position: fixed; 
+    top: 20%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: #eee;
+    padding: 20px;
+    border: 1px solid #aaa;
+    z-index: 9999;
+    color: #333;
+  }

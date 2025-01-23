@@ -1,0 +1,70 @@
+/* Overlay oscurecido para la pantalla */
+.admin-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+    z-index: 9998; 
+  }
+  
+  /* Activo: se ve y permite clics */
+  .admin-overlay.active {
+    opacity: 1; 
+    pointer-events: auto;
+  }
+  
+  /* Panel completo ocupando la pantalla */
+  .admin-panel {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;    /* Ocupa ancho completo */
+    height: 100vh;   /* Ocupa alto completo */
+    background: #fff;
+    opacity: 0;           /* Oculto inicialmente */
+    transform: scale(0.9);/* Efecto “zoom out” */
+    transition: all 0.3s ease;
+    z-index: 9999;
+    overflow-y: auto;     /* Scroll si el contenido excede la pantalla */
+    padding: 20px;        /* Espacio interior */
+  }
+  
+  /* Cuando está activo: se muestra con transición */
+  .admin-panel.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Opcional: estilo para el botón de cerrar */
+  .close-btn {
+    float: right;
+    margin-top: -50px; /* Ajustar según diseño */
+  }
+  *{
+    color: black;
+  }
+  .btn{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 10px 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .btn:hover{
+    background-color: #cccccc;
+    font-size: 20px;
+  }
+  

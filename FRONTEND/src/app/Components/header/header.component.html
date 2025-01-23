@@ -1,0 +1,23 @@
+<header class="header">
+    
+
+    <div class="header_btnadmin">
+        <button class="btn" (click)="toggleAdmin.emit()">
+            ADMIN
+        </button>
+    </div>
+
+    <div class="header_logo">
+        <h1>GAME</h1>
+        <a href="#"><img src="assets/imagenes/logopagina.png" alt="Logo"></a>
+        <h1>SHOP</h1>
+    </div>
+
+    <div class="header_botones">
+        <app-usuario></app-usuario>
+
+        <button class="btn" (click)="abrirCarrito()">
+            Mi cesta(0)
+        </button>
+    </div>
+</header>

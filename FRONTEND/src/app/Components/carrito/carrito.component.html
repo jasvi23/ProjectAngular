@@ -1,0 +1,39 @@
+<!-- Fondo oscurecido -->
+<div class="cart-overlay" [class.active]="isOpen" (click)="close()"></div>
+
+<div class="cart-panel" [class.active]="isOpen">
+    <button (click)="close()">X</button>
+    <h1 style="font-weight: bold;">Mi Cesta</h1>
+  
+    <div *ngIf="numProductos > 0; else emptyCart" class="filled_cart">
+        <div class="cart_product">
+            <div class="cart_product_img">
+                <img src="assets/imagenes/imagen1.jpg" alt="Imagen del producto">
+            </div>
+            <div class="cart_product_info">
+                <h2>Nombre del producto</h2>
+                <p>Precio</p>
+                <p>Cantidad</p>
+                <p>Precio Total</p>
+            </div>
+            <div class="cart_product_btn">
+                <button class="btn">Añadir</button>
+                <button class="btn">Eliminar</button>
+            </div>
+        </div>    
+        <hr>
+        <div class="cart_total">
+            <h2>Numero de unidades</h2>
+            <h2>Total</h2>
+            <button class="btn" (click)="close()">Comprar</button> <!--En vez de close seria algo como Comprar() que dentro llevaria Close()-->
+        </div>
+    </div>
+    
+    <ng-template #emptyCart>
+        <h2 style="margin-top: 50%;">La cesta esta vacia</h2>
+        <p style="margin-top: 10px;">Añada algún artículo a la cesta</p>
+        <button class="btn" style="margin-top: 10px;" (click)="close()">Explorar artículos</button>
+    </ng-template>
+
+</div>
+    

@@ -1,0 +1,1 @@
+lista de compras desplegables que al desplegar muestran numero serie productos y especificaciones y fecha y eso

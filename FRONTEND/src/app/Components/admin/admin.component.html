@@ -1,0 +1,94 @@
+
+<!-- Overlay oscurecido -->
+<div class="admin-overlay" [class.active]="isOpen" (click)="closed.emit()"></div>
+
+<!-- Panel de administración ocupando toda la pantalla -->
+<div class="admin-panel" [class.active]="isOpen">
+  <h1>ADMINISTRAR</h1>
+  
+  <!-- FORMULARIO PARA AÑADIR PRODUCTOS -->
+  <section>
+    <h2>Añadir producto</h2>
+    <form>
+      <div>
+        <label>Nombre:</label>
+        <input type="text" [(ngModel)]="newProduct.name" name="name">
+      </div>
+      <div>
+        <label>Categoría:</label>
+        <input type="text" [(ngModel)]="newProduct.category" name="category">
+      </div>
+      <div>
+        <label>Precio:</label>
+        <input type="number" [(ngModel)]="newProduct.price" name="price">
+      </div>
+      <div>
+        <label>Imagen (input file):</label>
+        <input type="file" (change)="onFileSelected($event)">
+      </div>
+      <!--<button type="button" (click)="addProduct()">Añadir</button>-->
+    </form>
+  </section>
+  
+  <hr>
+
+  <!-- TABLA DE PRODUCTOS -->
+  <section>
+    <h2>Listado de productos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Categoría</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ngFor para cada producto en un array local "products" -->
+        <tr *ngFor="let product of products">
+          <td>
+            <img [src]="" [alt]="product.name" width="50">
+          </td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+            <button (click)="editProduct(product)">Editar</button>
+            <button (click)="deleteProduct(product)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr>
+
+  <!-- FORMULARIO PARA MODIFICAR UN PRODUCTO SELECCIONADO -->
+  <section>
+    <h2>Modificar producto</h2>
+    <form *ngIf="selectedProduct">
+      <div>
+        <label>Nombre:</label>
+        <input type="text" [(ngModel)]="selectedProduct.name" name="editName">
+      </div>
+      <div>
+        <label>Categoría:</label>
+        <input type="text" [(ngModel)]="selectedProduct.category" name="editCategory">
+      </div>
+      <div>
+        <label>Precio:</label>
+        <input type="number" [(ngModel)]="selectedProduct.price" name="editPrice">
+      </div>
+      <div>
+        <label>Imagen (input file):</label>
+        <input type="file" (change)="onFileSelected($event)">
+      </div>
+      <button type="button" (click)="updateProduct()">Modificar</button>
+    </form>
+  </section>
+
+  <!-- Botón para cerrar el panel (alternativa al click en overlay) -->
+  <button class="close-btn" (click)="closed.emit()">Cerrar</button>
+</div>

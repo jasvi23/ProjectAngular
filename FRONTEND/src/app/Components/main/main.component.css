@@ -1,0 +1,11 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #333; /* Mismo color que el header */
+    color: white; /* Letras en blanco */
+    border: 2px solid white; /* Borde blanco */
+    padding: 10px; /* Padding interior */
+    height: 100%; /* Altura del main */
+    width: auto;
+}
